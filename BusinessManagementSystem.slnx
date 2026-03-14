@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/api/">
+    <Project Path="api/Bms.Api/Bms.Api.csproj" />
+  </Folder>
+  <Folder Name="/domain/">
+    <Project Path="domain/Bms.Domain/Bms.Domain.csproj" />
+  </Folder>
+  <Folder Name="/infra/">
+    <Project Path="infrastructure/Bms.Infrastructure/Bms.Infrastructure.csproj" />
+  </Folder>
+</Solution>
