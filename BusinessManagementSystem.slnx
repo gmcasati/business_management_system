@@ -1,6 +1,6 @@
 <Solution>
   <Folder Name="/api/">
-    <Project Path="api/BusinessManagemenSystem.Api/BusinessManagemenSystem.Api.csproj" />
+    <Project Path="api/Bms.Api/Bms.Api.csproj" />
   </Folder>
   <Folder Name="/domain/">
     <Project Path="domain/Bms.Domain/Bms.Domain.csproj" />
