@@ -30,4 +30,11 @@ public class BusinessRepository(BusinessesDbContext dbContext) : IBusinessReposi
         await _dbContext.SaveChangesAsync(cancellationToken);
         return business;
     }
+
+    public async Task<Domain.Entities.Business> DeleteBusinessAsync(Domain.Entities.Business business, CancellationToken cancellationToken)
+    {
+        _dbContext.Businesses.Remove(business);
+        await _dbContext.SaveChangesAsync(cancellationToken);
+        return business;
+    }
 }

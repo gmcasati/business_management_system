@@ -1,4 +1,4 @@
-using Bms.Api.Features.Businesses.Dto;
+using Bms.Api.Dtos.Businesses;
 using Bms.Domain;
 using Bms.Domain.Entities;
 using Bms.Domain.Repositories;

@@ -1,4 +1,4 @@
-using Bms.Api.Features.Businesses.Dto;
+using Bms.Api.Dtos.Businesses;
 
 namespace Bms.Api.Features.Businesses.ListBusinesses;
 
