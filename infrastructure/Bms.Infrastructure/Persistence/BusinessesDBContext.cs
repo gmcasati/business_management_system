@@ -7,5 +7,5 @@ public class BusinessesDbContext : DbContext
     public BusinessesDbContext(DbContextOptions<BusinessesDbContext> options)
         : base(options) { }
 
-    public DbSet<Domain.Entities.Business> Todos => Set<Domain.Entities.Business>();
+    public DbSet<Domain.Entities.Business> Businesses => Set<Domain.Entities.Business>();
 }
