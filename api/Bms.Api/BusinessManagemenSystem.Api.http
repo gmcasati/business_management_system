@@ -1,6 +1,12 @@
 @BusinessManagemenSystem.Api_HostAddress = http://localhost:5093
 
-GET {{BusinessManagemenSystem.Api_HostAddress}}/weatherforecast/
+POST {{BusinessManagemenSystem.Api_HostAddress}}/api/businesses
 Accept: application/json
+Content-Type: application/json
 
+{
+  "name": "Test Business",
+  "address": "123 Main St",
+  "phone": "555-1234"
+}
 ###
