@@ -1,5 +1,7 @@
 using Bms.Api.Features.Businesses;
+using Bms.Api.Features.Businesses.BusinessDetail;
 using Bms.Api.Features.Businesses.CreateBusiness;
+using Bms.Api.Features.Businesses.ListBusinesses;
 using Bms.Domain.Repositories;
 using Bms.Infrastructure;
 using Bms.Infrastructure.Persistence;
@@ -10,19 +12,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi("v1", options =>
-{
-    options.AddDocumentTransformer((document, _, _) =>
-    {
-        document.Info.Title = "Business Management System API";
-        document.Info.Description = "HTTP API for managing businesses and related operations.";
-        document.Info.Version = "v1";
-        return Task.CompletedTask;
-    });
-});
+builder.Services.AddOpenApi();
 builder.Services.AddDbContext<BusinessesDbContext>(opt => opt.UseInMemoryDatabase("BusinessDb"));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddScoped<CreateBusinessHandler>();
+builder.Services.AddScoped<ListBusinessesHandler>();
+builder.Services.AddScoped<BusinessDetailHandler>();
 builder.Services.AddScoped<IBusinessRepository, BusinessInMemoryRepository>();
 builder.Services.AddEndpointsApiExplorer();
 
@@ -34,8 +29,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.UseSwaggerUI(options =>
     {
-        options.DocumentTitle = "BMS API - Swagger UI";
-        options.SwaggerEndpoint("/openapi/v1.json", "Business Management System API v1");
+        options.SwaggerEndpoint("/openapi/v1.json", "v1");
     });
 }
 
