@@ -5,6 +5,6 @@ namespace Bms.Api.Features.Businesses.ListBusinesses;
 public class ListBusinessesResponse
 {
     public int Total { get; set; }
-    public List<BusinessDto> Businesses { get; set; } = new List<BusinessDto>();
+    public List<BusinessReadDto> Businesses { get; set; } = new List<BusinessReadDto>();
 }
 

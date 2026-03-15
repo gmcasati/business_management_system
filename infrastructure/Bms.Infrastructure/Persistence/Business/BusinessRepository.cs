@@ -1,10 +1,9 @@
-using System.Security.AccessControl;
 using Bms.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bms.Infrastructure.Persistence.Business;
 
-public class BusinessInMemoryRepository(BusinessesDbContext dbContext) : IBusinessRepository
+public class BusinessRepository(BusinessesDbContext dbContext) : IBusinessRepository
 {
     private readonly BusinessesDbContext _dbContext = dbContext;
 
@@ -22,6 +21,13 @@ public class BusinessInMemoryRepository(BusinessesDbContext dbContext) : IBusine
 
     public async Task<Domain.Entities.Business?> GetBusinessAsync(Guid id, CancellationToken cancellationToken)
     {
-        return await _dbContext.Businesses.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+        return await _dbContext.Businesses.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+    }
+
+    public async Task<Domain.Entities.Business> UpdateBusinessAsync(Domain.Entities.Business business, CancellationToken cancellationToken)
+    {
+        _dbContext.Businesses.Update(business);
+        await _dbContext.SaveChangesAsync(cancellationToken);
+        return business;
     }
 }

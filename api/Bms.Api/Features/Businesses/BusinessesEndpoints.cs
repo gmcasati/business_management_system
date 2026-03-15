@@ -1,6 +1,7 @@
 using Bms.Api.Features.Businesses.BusinessDetail;
 using Bms.Api.Features.Businesses.CreateBusiness;
 using Bms.Api.Features.Businesses.ListBusinesses;
+using Bms.Api.Features.Businesses.UpdateBusiness;
 
 namespace Bms.Api.Features.Businesses;
 
@@ -14,6 +15,7 @@ public static class BusinessesEndpoints
         group.MapCreateBusinessEndpoint();
         group.MapListBusinessesEndpoint();
         group.MapBusinessDetailEndpoint();
+        group.MapUpdateBusinessEndpoint();
         return app;
     }
 }
