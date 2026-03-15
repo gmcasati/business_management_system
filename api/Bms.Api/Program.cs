@@ -2,6 +2,7 @@ using Bms.Api.Features.Businesses;
 using Bms.Api.Features.Businesses.BusinessDetail;
 using Bms.Api.Features.Businesses.CreateBusiness;
 using Bms.Api.Features.Businesses.ListBusinesses;
+using Bms.Api.Features.Businesses.UpdateBusiness;
 using Bms.Domain.Repositories;
 using Bms.Infrastructure;
 using Bms.Infrastructure.Persistence;
@@ -18,7 +19,8 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddScoped<CreateBusinessHandler>();
 builder.Services.AddScoped<ListBusinessesHandler>();
 builder.Services.AddScoped<BusinessDetailHandler>();
-builder.Services.AddScoped<IBusinessRepository, BusinessInMemoryRepository>();
+builder.Services.AddScoped<UpdateBusinessHandler>();
+builder.Services.AddScoped<IBusinessRepository, BusinessRepository>();
 builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();

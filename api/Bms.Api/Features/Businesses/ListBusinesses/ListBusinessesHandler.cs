@@ -14,7 +14,7 @@ public class ListBusinessesHandler(IBusinessRepository businessRepository)
 
         return new ListBusinessesResponse()
         {
-            Total = businesses?.Count() ?? 0, Businesses = businesses?.Select(x => new BusinessDto()
+            Total = businesses?.Count() ?? 0, Businesses = businesses?.Select(x => new BusinessReadDto()
             {
                 Id = x.Id,
                 Name = x.Name,
@@ -23,7 +23,7 @@ public class ListBusinessesHandler(IBusinessRepository businessRepository)
                 Status = (int)x.Status,
                 Municipality =  x.Municipality,
                 EmailOrContact =  x.EmailOrContact
-            }).ToList()?? new List<BusinessDto>()
+            }).ToList()?? new List<BusinessReadDto>()
         };
     }
 }
