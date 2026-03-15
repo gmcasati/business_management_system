@@ -1,4 +1,4 @@
-namespace Bms.Api.Features.Businesses.Dto;
+namespace Bms.Api.Dtos.Businesses;
 
 public class BusinessReadDto : BusinessDto
 {
