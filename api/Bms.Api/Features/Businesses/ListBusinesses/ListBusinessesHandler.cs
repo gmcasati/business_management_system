@@ -10,7 +10,7 @@ public class ListBusinessesHandler(IBusinessRepository businessRepository)
 {
     public async Task<ListBusinessesResponse> HandleAsync(ListBusinessesRequest request, CancellationToken ct)
     {
-        var businesses = await businessRepository.GetBusinessAsync(ct);
+        var businesses = await businessRepository.GetBusinessesAsync(ct);
 
         return new ListBusinessesResponse()
         {

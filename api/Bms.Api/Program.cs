@@ -1,4 +1,5 @@
 using Bms.Api.Features.Businesses;
+using Bms.Api.Features.Businesses.BusinessDetail;
 using Bms.Api.Features.Businesses.CreateBusiness;
 using Bms.Api.Features.Businesses.ListBusinesses;
 using Bms.Domain.Repositories;
@@ -16,6 +17,7 @@ builder.Services.AddDbContext<BusinessesDbContext>(opt => opt.UseInMemoryDatabas
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddScoped<CreateBusinessHandler>();
 builder.Services.AddScoped<ListBusinessesHandler>();
+builder.Services.AddScoped<BusinessDetailHandler>();
 builder.Services.AddScoped<IBusinessRepository, BusinessInMemoryRepository>();
 builder.Services.AddEndpointsApiExplorer();
 

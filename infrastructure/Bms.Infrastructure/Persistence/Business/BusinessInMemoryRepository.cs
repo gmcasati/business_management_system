@@ -1,3 +1,4 @@
+using System.Security.AccessControl;
 using Bms.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,8 +15,13 @@ public class BusinessInMemoryRepository(BusinessesDbContext dbContext) : IBusine
         return business;
     }
 
-    public async Task<List<Domain.Entities.Business>> GetBusinessAsync(CancellationToken cancellationToken)
+    public async Task<List<Domain.Entities.Business>> GetBusinessesAsync(CancellationToken cancellationToken)
     {
         return await _dbContext.Businesses.ToListAsync(cancellationToken: cancellationToken);
+    }
+
+    public async Task<Domain.Entities.Business?> GetBusinessAsync(Guid id, CancellationToken cancellationToken)
+    {
+        return await _dbContext.Businesses.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
     }
 }
