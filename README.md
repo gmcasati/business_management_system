@@ -1,5 +1,8 @@
 # Business Management System
 
+## Link Youtube Pitch
+https://www.youtube.com/watch?v=JhPiXAhvgYY
+
 ## Visão Geral
 
 O **Business Management System** é uma aplicação backend protótipo desenvolvida para gerenciar informações estruturadas sobre empreendimentos e empreendedores localizados no estado de Santa Catarina, Brasil. O projeto foi desenvolvido como parte de um desafio técnico para o **edital IA para Desenvolvedores organizado pela SCTech**, com o objetivo de demonstrar a implementação de um serviço simples, porém bem estruturado, para gestão de dados relacionados ao empreendedorismo.
